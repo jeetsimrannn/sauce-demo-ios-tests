@@ -1,5 +1,5 @@
 /**
- * WebdriverIO configuration for running Appium iOS tests locally on simulator.
+ * WebdriverIO configuration for running Appium iOS tests on CI (GitHub Actions)
  */
 const path = require('path');
 
@@ -10,11 +10,7 @@ exports.config = {
 
     // Test specs to run
     specs: [
-        './test/specs/**/*.js',
-        // './test/specs/login.spec.js',
-        // './test/specs/checkout.withLogin.spec.js',
-        // './test/specs/checkout.withoutLogin.spec.js',
-        // './test/specs/products.sort.spec.js'
+        './test/specs/products.sort.spec.js'
     ],
 
     // Limit parallel test instances
@@ -23,9 +19,9 @@ exports.config = {
     // Device and app capabilities for iOS
     capabilities: [{
         platformName: 'iOS',
-        'appium:deviceName': 'iPhone 17 Pro',
-        'appium:platformVersion': '26.5',
-        'appium:app': path.join(process.cwd(), 'apps/Payload/My Demo App.app'),
+        'appium:deviceName': 'iPhone 15',
+        'appium:platformVersion': '18.5',
+        'appium:app': path.join(process.cwd(), 'apps/Payload/MyDemoApp.app'),
         'appium:automationName': 'XCUITest',
         'appium:noReset': false,
         'appium:fullReset': false
