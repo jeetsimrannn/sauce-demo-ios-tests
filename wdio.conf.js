@@ -11,10 +11,10 @@ exports.config = {
     // Test specs to run
     specs: [
         // './test/specs/**/*.js',
-        './test/specs/login.spec.js',
+        // './test/specs/login.spec.js',
         // './test/specs/checkout.withLogin.spec.js',
         // './test/specs/checkout.withoutLogin.spec.js',
-        // './test/specs/products.sort.spec.js'
+        './test/specs/products.sort.spec.js'
     ],
 
     // Limit parallel test instances
