@@ -21,7 +21,7 @@ exports.config = {
         platformName: 'iOS',
         'appium:deviceName': 'iPhone 15',
         'appium:platformVersion': '18.5',
-        'appium:app': path.join(process.cwd(), 'apps/Payload/MyDemoApp.app'),
+        'appium:app': path.join(process.cwd(), 'apps/Payload/My Demo App.app'),
         'appium:automationName': 'XCUITest',
         'appium:noReset': false,
         'appium:fullReset': false
