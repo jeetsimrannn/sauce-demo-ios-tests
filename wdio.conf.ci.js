@@ -31,7 +31,7 @@ exports.config = {
     logLevel: 'info',
     bail: 0,
     waitforTimeout: 10000,
-    connectionRetryTimeout: 120000,
+    connectionRetryTimeout: 600000,
     connectionRetryCount: 3,
 
     // Services and test framework
