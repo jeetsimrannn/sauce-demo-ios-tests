@@ -19,7 +19,7 @@ exports.config = {
     // Device and app capabilities for iOS
     capabilities: [{
         platformName: 'iOS',
-        'appium:deviceName': 'iPhone 15',
+        'appium:deviceName': 'iPhone 16 Pro',
         'appium:platformVersion': '18.5',
         'appium:app': path.join(process.cwd(), 'apps/Payload/My Demo App.app'),
         'appium:automationName': 'XCUITest',

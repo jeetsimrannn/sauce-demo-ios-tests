@@ -28,25 +28,17 @@ jobs:
       - name: Install XCUITest driver
         run: appium driver install xcuitest
 
-      - name: List available simulators
-        run: xcrun simctl list devices available
-
       - name: Download iOS app
         run: |
           mkdir -p apps
           curl -L -o apps/MyDemoApp.zip "https://github.com/saucelabs/my-demo-app-ios/releases/download/2.2.2/SauceLabs-Demo-App.Simulator.zip"
           unzip apps/MyDemoApp.zip -d apps/
 
-    #   - name: Boot iOS Simulator
-    #     run: |
-    #         xcrun simctl boot "iPhone 15" || true
-    #         xcrun simctl list devices | grep Booted
+      - name: Start Appium server
+        run: appium &
 
-    #   - name: Start Appium server
-    #     run: appium &
+      - name: Wait for Appium to start
+        run: sleep 5
 
-    #   - name: Wait for Appium to start
-    #     run: sleep 15
-
-    #   - name: Run automation tests
-    #     run: npx wdio run wdio.conf.ci.js
+      - name: Run automation tests
+        run: npx wdio run wdio.conf.ci.js
