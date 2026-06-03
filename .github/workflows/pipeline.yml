@@ -34,18 +34,13 @@ jobs:
           curl -L -o apps/MyDemoApp.zip "https://github.com/saucelabs/my-demo-app-ios/releases/download/2.2.2/SauceLabs-Demo-App.Simulator.zip"
           unzip apps/MyDemoApp.zip -d apps/
 
-      - name: Boot simulator
-        run: xcrun simctl boot "iPhone 15" || true
+      - name: Boot iOS Simulator
+        run: |
+            xcrun simctl boot "iPhone 15" || true
+            xcrun simctl list devices | grep Booted
 
       - name: Start Appium server
         run: appium &
-
-      - name: Wait for Appium to start
-        run: |
-            for i in {1..30}; do
-            curl -s http://127.0.0.1:4723/status && echo "Appium ready" && break
-            sleep 2
-            done
 
       - name: Wait for Appium to start
         run: sleep 15
